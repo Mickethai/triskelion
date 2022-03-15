@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 
 
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class Security extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
@@ -20,14 +20,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login.html")
                 .failureUrl("/login-error.html")
-                .permitAll();
+                .permitAll()
+                .defaultSuccessUrl("/usersite",true);//Mapping to usersite
     }
 
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("user")
+                .withUser("Mickethai")
                 .password("{noop}pass") // Spring Security 5 requires specifying the password storage format
                 .roles("USER");
     }
