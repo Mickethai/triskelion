@@ -198,7 +198,10 @@ public class LoginTest {
                 arguments("wrong", "wrong"),
                 arguments("",""),
                 arguments("468234u0gjiosdk4390wefjivdskwep9+wepafsd@$$€","11111010101010100101011010101201212910nujhgksdl@//()"),
-                arguments("1","1")
+                arguments("1","1"),
+                arguments("mICKETHAI","PASS"),
+                arguments("MiCkEtHaI","PaSs"),
+                arguments("MICKETHAI","PASS")
         );
     }
 }
